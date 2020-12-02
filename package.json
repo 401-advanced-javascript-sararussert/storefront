@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "MERN SHOPPING CART",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server"
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,11 @@
   },
   "homepage": "https://github.com/401-advanced-javascript-sararussert/storefront#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.1"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
