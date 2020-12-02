@@ -29,3 +29,15 @@ header i {
   text-decoration: none;
   color: inherit;
 }
+
+.productScreen {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.productScreenActions {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}

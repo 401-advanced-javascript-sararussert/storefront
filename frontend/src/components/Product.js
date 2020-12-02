@@ -34,17 +34,17 @@ const Product = (props) => {
         </Link>
         <CardContent>
           <Link to={`/product/${props.product._id}`} className="linkStyle">
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="h6">
               {props.product.name}
             </Typography>
           </Link>
-          <Typography gutterBottom variant="p" component="p">
+          <Typography gutterBottom variant="subtitile2">
             <Rating 
               value={props.product.rating} 
               text={`${props.product.numReviews} reviews`} 
             />
           </Typography>
-          <Typography gutterBottom variant="h5" component="p">
+          <Typography gutterBottom variant="subtitle1">
             ${props.product.price}
           </Typography>
           {/* <Typography variant="body2" color="textSecondary" component="p">
