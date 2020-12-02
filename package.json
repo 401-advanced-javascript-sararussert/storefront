@@ -1,0 +1,27 @@
+{
+  "name": "virtual-store",
+  "version": "1.0.0",
+  "description": "MERN SHOPPING CART",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/401-advanced-javascript-sararussert/storefront.git"
+  },
+  "author": "Sara Russert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/401-advanced-javascript-sararussert/storefront/issues"
+  },
+  "homepage": "https://github.com/401-advanced-javascript-sararussert/storefront#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
