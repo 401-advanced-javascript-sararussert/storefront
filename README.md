@@ -20,7 +20,7 @@ git clone https://github.com/401-advanced-javascript-sararussert/storefront.git
 navagate to the inner todo folder and npm i
 
 ## Using Storefront
-- npm start
+- npm run dev (from the root)
 - npm test
 
 ## Acknowledgments 
