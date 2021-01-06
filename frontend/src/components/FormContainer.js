@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Container } from '@material-ui/core';
 
-const FormContainer = () => {
+const FormContainer = ({children}) => {
   return (
-    <div>
-      
-    </div>
+    <Container maxWidth="sm">
+      {children}
+    </Container>
   )
 }
 
