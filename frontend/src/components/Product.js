@@ -7,7 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Rating from './Rating';
-import ProductScreen from '../screens/ProductScreen';
 
 const useStyles = makeStyles({
   root: {
@@ -36,7 +35,7 @@ const Product = (props) => {
               {props.product.name}
             </Typography>
           </Link>
-          <Typography gutterBottom variant="subtitile2">
+          <Typography gutterBottom variant="subtitle2">
             <Rating 
               value={props.product.rating} 
               text={`${props.product.numReviews} reviews`} 
