@@ -31,13 +31,11 @@ const LoginScreen = ({location, history}) => {
 
   const redirect = location.search ? location.search.split('=')[1] : '/';
 
-  // having problems with this preventing ever reaching the login screen - prints []
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     console.log(userInfo);
-  //     history.push(redirect);
-  //   }
-  // }, [history, userInfo, redirect])
+  useEffect(() => {
+    if (userInfo) {
+      history.push(redirect);
+    }
+  }, [history, userInfo, redirect])
   
   const submitHandler = (e) => {
     e.preventDefault()
