@@ -3,7 +3,7 @@
 ## Author: Sara Russert
 
 ## Description of Project
-An online shopping portal for a fictional store
+An online shopping portal for a fictional store via a udemy course
 
 ## Technical Requirements
 React
