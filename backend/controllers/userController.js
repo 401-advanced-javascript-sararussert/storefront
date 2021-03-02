@@ -92,7 +92,7 @@ const UpdateUserProfile = asyncHandler(async (req, res) => {
       user.password = req.body.password
     }
   
-    const updatedUser = await user.save;
+    const updatedUser = await user.save();
 
     res.json({
       _id: updatedUser._id,
@@ -106,5 +106,6 @@ const UpdateUserProfile = asyncHandler(async (req, res) => {
     throw new Error('User not found');
   }
 })
+
 
 export { authUser, getUserProfile, registerUser, UpdateUserProfile };
