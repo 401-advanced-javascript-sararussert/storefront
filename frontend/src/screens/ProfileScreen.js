@@ -7,8 +7,9 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { getUserDetails } from '../actions/userActions';
+import { getUserDetails, updateUserProfile } from '../actions/userActions';
 import Button from '@material-ui/core/Button';
+import { userUpdateProfileReducer } from '../reducers/userReducers';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +43,9 @@ const ProfileScreen = ({location, history}) => {
   const userLogin = useSelector(state => state.userLogin);
   const { userInfo } = userLogin;
 
+  const userUpdateProfile = useSelector(state => state.userUpdateProfile);
+  const { success } = userUpdateProfile;
+
   useEffect(() => {
     if (!userInfo) {
       history.push('/login');
@@ -60,7 +64,7 @@ const ProfileScreen = ({location, history}) => {
     if (password !== confirmPassword) {
       setMessage('Passwords do not match');
     } else {
-      //dispatch update profile
+      dispatch(updateUserProfile({ id: user._id, name, email, password }))
     }
   }
 
@@ -72,6 +76,7 @@ const ProfileScreen = ({location, history}) => {
             <Paper className={classes.paper1}><h1>User Profile</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
+      {success && <Message variant='success'>{success}</Message>}
       {loading && <Loader />}
       <div>
         <form onSubmit={submitHandler}>
