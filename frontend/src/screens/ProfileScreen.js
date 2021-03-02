@@ -9,7 +9,6 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { getUserDetails, updateUserProfile } from '../actions/userActions';
 import Button from '@material-ui/core/Button';
-import { userUpdateProfileReducer } from '../reducers/userReducers';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,14 +56,14 @@ const ProfileScreen = ({location, history}) => {
         setEmail(user.email);
       }
     }
-  }, [user, dispatch, history, userInfo])
+  }, [dispatch, history, userInfo, user, success])
   
   const submitHandler = (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
       setMessage('Passwords do not match');
     } else {
-      dispatch(updateUserProfile({ id: user._id, name, email, password }))
+      dispatch(updateUserProfile({ id: user._id, name: name, email: email, password: password }))
     }
   }
 
@@ -76,7 +75,8 @@ const ProfileScreen = ({location, history}) => {
             <Paper className={classes.paper1}><h1>User Profile</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
-      {success && <Message variant='success'>{success}</Message>}
+      {success && <Message variant='success'>Profile 
+      Updated</Message>}
       {loading && <Loader />}
       <div>
         <form onSubmit={submitHandler}>
