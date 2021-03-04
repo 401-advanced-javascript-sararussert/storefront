@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as SiteLink } from 'react-router-dom';
-import { Breadcrumbs, Link, Typography, Container } from '@material-ui/core';
+import { Breadcrumbs, Link, Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -44,7 +44,7 @@ const Header = () => {
           CART
           </Link>
         </SiteLink>
-        {userInfo? (
+        {userInfo ? (
           <div>
           <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
             {userInfo.name}
