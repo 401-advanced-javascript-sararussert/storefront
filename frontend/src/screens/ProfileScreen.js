@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,6 +8,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { getUserDetails, updateUserProfile } from '../actions/userActions';
 import Button from '@material-ui/core/Button';
+import {USER_UPDATE_PROFILE_RESET} from '../constants/userConstants'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,7 +49,8 @@ const ProfileScreen = ({location, history}) => {
     if (!userInfo) {
       history.push('/login');
     } else {
-      if(!user.name) {
+      if(!user || !user.name || success) {
+        dispatch({ type: USER_UPDATE_PROFILE_RESET })
         dispatch(getUserDetails('profile'));
       } else {
         setName(user.name);
